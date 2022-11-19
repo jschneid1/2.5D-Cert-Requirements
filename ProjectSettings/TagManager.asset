@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ledge_Checker
+  - Player_Ladder_Bottom
+  - Player_Ladder_Top
+  - Collectable
+  - Ladder
   layers:
   - Default
   - TransparentFX
