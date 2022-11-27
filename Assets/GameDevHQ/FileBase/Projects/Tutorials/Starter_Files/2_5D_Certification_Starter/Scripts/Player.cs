@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
             _onLadder = true;
             _grounded = false;
         }
+
+        if(Mathf.Abs(_inputMovement.x) > 0 && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                _playerAnimator.SetTrigger("Roll");
+            }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -137,7 +142,10 @@ public class Player : MonoBehaviour
 
     public void EndClimbPosition(Transform endPos)
     {
-        _endClimbPosition = endPos;
+        if(_onLedge)
+        {
+            _endClimbPosition = endPos;
+        }
     }
 
     public void PlayerFinishClimb()
